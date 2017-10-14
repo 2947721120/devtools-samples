@@ -98,22 +98,22 @@
   document.querySelector('.stop').addEventListener('click', function (e) {
     if (app.enableApp) {
       cancelAnimationFrame(frame);
-      e.target.textContent = 'Start';
+      e.target.textContent = '开始';
       app.enableApp = false;
     } else {
       frame = window.requestAnimationFrame(app.update);
-      e.target.textContent = 'Stop';
+      e.target.textContent = '停止';
       app.enableApp = true;
     }
   });
 
   document.querySelector('.optimize').addEventListener('click', function (e) {
-    if (e.target.textContent === 'Optimize') {
+    if (e.target.textContent === '优化') {
       app.optimize = true;
-      e.target.textContent = 'Un-Optimize';
+      e.target.textContent = '未优化';
     } else {
       app.optimize = false;
-      e.target.textContent = 'Optimize';
+      e.target.textContent = '优化';
     }
   });
 
@@ -160,8 +160,8 @@
 
   window.addEventListener('resize', onResize);
 
-  add.textContent = 'Add ' + incrementor;
-  subtract.textContent = 'Subtract ' + incrementor;
+  add.textContent = ' 添加' + incrementor;
+  subtract.textContent = '减去 ' + incrementor;
   document.body.removeChild(proto);
   proto.classList.remove('.proto');
   app.init();
